@@ -1,0 +1,95 @@
+<section class="media">
+    <div class="container container--default media-container">
+        <div class="media-meta">
+            <h1 class="media-caption">Отчеты</h1>
+            <h2 class="media-meta__album-name">{{albumName}}</h2>
+            <div class="media-meta__album-description" ng-bind-html="albumDescription"></div>
+            <ul class="media-meta__albums">
+                <li ng-repeat="Album in Albums" class="media-meta__album-link"><a href="" ng-click="selectAlbum($index)">{{Album.link_name}}</a></li>
+            </ul>
+        </div>
+        <div class="media-content">
+            <div class="video-gallery">
+                <figure ng-repeat="Video in AlbumVideos" class="video-thumb">
+                    <a href="{{Video.url}}" magnific-popup class="mfp-iframe">
+                        <img src="{{Video.thumb}}">
+                    </a>
+                </figure>
+            </div>
+            <div class="photo-gallery" itemscope itemtype="http://schema.org/ImageGallery" masonry='{ "gutter" : 16 , "itemSelector" : ".photo-thumb"}'>
+                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" ng-repeat="Photo in AlbumPhotos" class="photo-thumb" masonry-tile>
+                    <a href="{{Photo.orig}}" itemprop="contentUrl" data-size="{{Photo.width + 'x' + Photo.height}}" ng-click="openGallery($event,$index);">
+                        <img src="{{Photo.thumb}}" itemprop="thumbnail" alt="{{Photo.caption}}" />
+                    </a>
+                    <figcaption class="photo-thumb__caption" itemprop="caption description">{{Photo.caption}}</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Закрыть (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Поделиться"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Во весь экран"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Приблизить/отдалить"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Следующая (стрелка влево)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Предыдущая (стрелка вправо)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

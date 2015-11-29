@@ -1,0 +1,17 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Artem Knyazev   -- developer -- @buzzinoffbond
+    Mikhail Voronin -- designer  -- @onenk982
+
+# THANKS
+
+    Nikolay Semenov
+    Anton Savin
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3, PHP
+    Normalize.css, jQuery, Bootstrap, Modernizr, Fluidable, Magnific Popup, Html5shiv, Respond.js, Jacklmoore Autosize, Kohana framework

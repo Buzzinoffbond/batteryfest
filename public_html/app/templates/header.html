@@ -1,0 +1,42 @@
+<header class="header" ng-class="{'header--collapsed':headerCollapsed, '':!headerCollapsed}" ng-controller="Header">
+    <div class="topnav">
+        <div class="topnav__container">
+            <div class="topnav__mobile">
+                <a href="/" class="topnav__logo logo"><img src="/app/img/t-logo.png" alt=""></a>
+                <button class="hamburger" ng-click="headerCollapsed = !headerCollapsed">
+                    <span class="hamburger__sr">Меню</span>
+                </button>
+            </div>
+            <div class="topnav__radio radio">
+                radio
+            </div>
+            <nav class="navlist topnav__navlist" ng-controller="Menu">
+                <a 
+                    class="navlist__item topnav__link"
+                    ng-class="{'navlist__item--active topnav__link--active': Link.active, '': !Link.active}"
+                    ng-repeat="Link in Menu"
+                    href="{{Link.url}}"
+                    ng-if="Link.parent === ''">
+                        {{Link.text}}
+                </a>
+            </nav>
+        </div>
+    </div>
+    <div class="subnav">
+        <div class="subnav__container">
+            <nav class="navlist subnav__navlist" ng-controller="Menu">
+                <a 
+                    class="navlist__item subnav__link"
+                    ng-class="{'navlist__item--active subnav__link--active': Link.active, '': !Link.active}"
+                    ng-repeat="Link in Menu"
+                    href="{{Link.url}}"
+                    ng-if="(Link.parent !== '') && !Link.hidden">
+                        {{Link.text}}
+                </a>
+            </nav>
+            <div class="subnav__vklike">
+                <div id="vk_like"></div>
+            </div>
+        </div>
+    </div>
+</header>

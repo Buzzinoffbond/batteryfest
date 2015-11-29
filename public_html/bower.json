@@ -1,0 +1,20 @@
+{
+  "name": "batteryfest-festival",
+  "description": "batteryfest.ru website",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "less": "~2.5.3",
+    "jquery": "~2.1.4",
+    "normalize-css": "~3.0.3",
+    "angular-animate": "~1.4.7",
+    "angular-resource": "~1.4.7",
+    "photoswipe": "~4.1.0",
+    "masonry": "~3.3.2",
+    "angular-masonry-directive": "*",
+    "angular-magnific-popup": "wodka/angular-magnific-popup",
+    "angular-ymaps": "~0.1.0"
+  }
+}

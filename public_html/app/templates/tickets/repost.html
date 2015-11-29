@@ -1,0 +1,36 @@
+<div class="ticket-steps" ng-controller="Repost">
+    <div class="ticket-steps__step {{'ticket-steps__step--' + Step.post}} {{'ticket-steps__step--' + Step.auth}}">
+        <h3 class="ticket-steps__header"></h3>
+        <p class="text-center">Чтобы получить билет, разместите пост о фестивале на своей стене Вконтакте.</p>
+        <div class="postpreview">
+            <div class="postpreview__avatar">
+                <img src="{{post_credentials.avatar}}" alt="Аватар {{post_credentials.name}}">
+            </div>
+            <div class="postpreview__content">
+                <div class="postpreview__text">
+                    <b>{{post_credentials.name}}</b>
+                    <textarea ng-model="post_text" class="postpreview__textarea"></textarea>
+                </div>
+                <div class="postpreview__image">
+                    <button class="postpreview__previmage" ng-click="prevPostimage()"></button>
+                    <img class="postpreview__img" src="{{post_image.url}}" alt="Промо рок-фестиваля Батарея">
+                    <button class="postpreview__nextimage" ng-click="nextPostimage()"></button>
+                </div>
+            </div>
+        </div>
+        <div class="ticket-steps__button-container">
+            <button class="button ticket-steps__button" ng-class="{'ticket-steps__button--active':Step.auth==='available'}" ng-click="auth()">
+                Авторизоваться
+            </button>
+            <button class='button ticket-steps__button' ng-class="{'ticket-steps__button--active':Step.post==='available'}" ng-click="makePost()">
+                Разместить пост
+            </button>
+        </div>
+    </div>
+
+    <div class="ticket-steps__step {{'ticket-steps__step--' + Step.save}}">
+        <p class="text-center">Спасибо! Вот ваш билет, не забудьте взять его с собой на фестиваль.</p>
+            <p><a href="/api/ticket/pdf/{{ticket}}" target="blank">Версия для печати (pdf)</a></p>
+            <p><a href="/api/ticket/png/{{ticket}}" target="blank">Версия для мобильных устройств (png)</a></p>
+    </div>
+</div>

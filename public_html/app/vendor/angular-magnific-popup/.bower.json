@@ -1,0 +1,14 @@
+{
+  "name": "angular-magnific-popup",
+  "homepage": "https://github.com/wodka/angular-magnific-popup",
+  "_release": "7a087e8a7b",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "7a087e8a7b371e6bea266e7b7a94e66bde73050c"
+  },
+  "_source": "git://github.com/wodka/angular-magnific-popup.git",
+  "_target": "*",
+  "_originalSource": "wodka/angular-magnific-popup",
+  "_direct": true
+}

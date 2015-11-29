@@ -1,0 +1,12 @@
+<section class="lineup">
+    <div class="container container--default">
+        <ul class="lineup__groups">
+            <li ng-repeat="Group in Groups" class="lineup__group">{{Group.name}} <span class="lineup__univer">{{Group.university}}</span></li>
+        </ul>
+        <div class="hello__bgoverlay"></div>
+        <video autoplay loop poster="/app/img/bg_main.jpg" class="hello__bgvideo">
+            <source src="/app/vids/batteryfest_loop.webm" type="video/webm">
+            <source src="/app/vids/batteryfest_loop.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>

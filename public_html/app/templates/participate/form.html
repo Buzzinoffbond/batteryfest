@@ -1,0 +1,81 @@
+<section class="participate">
+    <div class="pageheader">
+        <h1 class="pagetitle">Принять участие в фестивале</h1>
+    </div>
+    <div class="container">
+        <form method="POST" action="" class="participate-form">
+            <div class="participate-form__main">
+                <div class="card">
+                    <div class="form-group">
+                        <label>Название коллектива</label>
+                        <input class="form-control" type="text" name="name" placeholder="Red Hot Chili Peppers" required>
+                    </div>
+                    <div class="form-group">
+                        <label>ВУЗ</label>
+                        <input class="form-control" type="text" name="university" placeholder="Московский Энергетический Институт" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Стиль</label>
+                        <input class="form-control" type="text" name="genre" placeholder="Альтернативный рок" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Пресс-релиз</label>
+                        <textarea class="form-control resize" name="press" id="press" placeholder="Расскажите нам про себя"></textarea>
+                    </div>
+                </div>
+                <div class="participate-form__members">
+                    <div class="form-group">
+                        <label>Количество участников: {{members.length}}</label>
+                    </div>
+                    <div class="card ">
+                        <div class="participate-member" ng-repeat="member in members" ngCloak>
+                            <div class="form-group participate-member__name">
+                                <label>ФИО</label>
+                                <input class="form-control" type="text" placeholder="{{membersPlaceholders[$index].name}}" ng-model="member.name">
+                            </div>
+                            <div class="form-group participate-member__instrument">
+                                <label>Инструмент</label>
+                                <input class="form-control" type="text" placeholder="{{membersPlaceholders[$index].instrument}}" ng-model="member.instrument">
+                            </div>
+                            <a href="" ng-click="removeMember($index)" class="participate-member__remove">&times;</a>
+                        </div>
+                        <p><a href="" class="link--functional" ng-click="addMember()">Добавить участника</a></p>
+                    </div>
+                </div>
+                <p ng-repeat="member in members">{{member.name}} {{member.instrument}}</p>
+                <div class="card">
+                    <div class="form-group">
+                        <label>Ссылка на демонстрационный материал</label>
+                        <input class="form-control" type="text" name="demo" required>
+                    </div>
+                </div>
+                <p>Требования к демо-материалам:
+                    <ul>
+                        <li>- предполагаемая программа выступления должна быть записана вживую (запись с репетиции, живого выступления) в виде аудиофайла или видеозаписи.</li>
+                        <li>- аудиофайл должен быть следующего формата: mp3 (не менее 128 kbps), PCM wav или flac. Аудиофайл размещается на одном из файлообменников (ifolder.ru, dropbox, files.mail.ru и подобных)</li>
+                        <li>- видеофайлы должны быть следующего формата: видео-кодек mp4: h264, DivX, XVid (не менее 360p), аудио-кодек: mp3, AAC, PCM. Приветствуется размещение на портале youtube.com</li>
+                    </ul>
+                </p>
+                <div class="card">
+                    <div class="form-group">
+                        <label>e-mail</label>
+                        <input class="form-control" type="email" name="email" placeholder="example@email.ltd" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Контактный телефон</label>
+                        <input class="form-control" type="text" name="phone" placeholder="+7(926) 123 45 67" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Дополнительно</label>
+                        <textarea class="form-control resize" name="other" id="other"></textarea>
+                        <p>Аудио, видео и фотографии для размещения на страничке группы на сайте фестиваля</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="button" type="submit">Отправить заявку</button>
+                </div>
+                <p><small>Нажимая "Отправить заявку", вы даёте согласие на <a href="/page/personal_agreement">обработку персональных данных</a></small></p>
+            </div>
+        </form>
+    </div>
+</section>

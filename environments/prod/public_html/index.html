@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="RU-ru" ng-app="fest">
+    <head ng-controller="Head">
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title ng-bind="Head.getTitle()">Батарея</title>
+        <meta name="description" content="Студенческий рок-фестиваль «Батарея» - это возможность молодым командам проявить себя и раскрыть свой потенциал. «Батарея» провозглашает свободу самовыражения!">
+        <meta itemprop="name" content="Рок-фестиваль «Батарея»">
+        <meta itemprop="description" content="Студенческий рок-фестиваль «Батарея» - это возможность молодым командам проявить себя и раскрыть свой потенциал. «Батарея» провозглашает свободу самовыражения!">
+        <meta itemprop="image" content="http://batteryfest.ru/app/img/batteryfest-social.jpg">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Рок-фестиваль «Батарея»">
+        <meta name="twitter:description" content="Студенческий рок-фестиваль «Батарея» - это возможность молодым командам проявить себя и раскрыть свой потенциал. «Батарея» провозглашает свободу самовыражения!">
+        <meta name="twitter:image:src" content="http://batteryfest.ru/app/img/batteryfest-social.jpg">
+        <meta property="og:title" content="Рок-фестиваль «Батарея»">
+        <meta property="og:description" content="Студенческий рок-фестиваль «Батарея» - это возможность молодым командам проявить себя и раскрыть свой потенциал. «Батарея» провозглашает свободу самовыражения!">
+        <meta property="og:image" content="http://batteryfest.ru/app/img/batteryfest-social.jpg">        
+        <link rel="image_src" href="http://batteryfest.ru/app/img/batteryfest-social.jpg">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="app/vendor/normalize-css/normalize.css">
+        <link rel="stylesheet" href="/app/vendor/photoswipe/dist/photoswipe.css">
+        <link rel="stylesheet" href="/app/vendor/photoswipe/dist/default-skin/default-skin.css">
+        <link rel="stylesheet" href="/app/vendor/magnific-popup/dist/magnific-popup.css">
+        <link rel="stylesheet" href="app/css/styles.min.css?281115" />
+        <base href="/">
+    </head>
+    <body>
+        <div ng-include="'/app/templates/header.html'"></div>
+        <main ng-view></main>
+        <script src="/app/vendor/jquery/dist/jquery.min.js"></script>
+        <script src="/app/vendor/photoswipe/dist/photoswipe.min.js"></script>
+        <script src="/app/vendor/photoswipe/dist/photoswipe-ui-default.min.js"></script>
+        <script src="/app/vendor/autosize/dist/autosize.min.js"></script>
+        <script src="/app/vendor/masonry/dist/masonry.pkgd.min.js"></script>
+        <script src="/app/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="/app/vendor/magnific-popup/dist/jquery.magnific-popup.js"></script>
+        <script src="//vk.com/js/api/openapi.js?120" type="text/javascript"></script>
+        <script src="/app/vendor/angular/angular.min.js"></script>
+        <script src="/app/vendor/angular-route/angular-route.min.js"></script>
+        <script src="/app/vendor/angular-animate/angular-animate.min.js"></script>
+        <script src="/app/vendor/angular-resource/angular-resource.min.js"></script>
+        <script src="/app/vendor/angular-masonry-directive/src/angular-masonry-directive.js"></script>
+        <script src="/app/vendor/angular-magnific-popup/angular-magnific-popup-directive.js"></script>
+        <script src="/app/vendor/angular-ymaps/angular-ymaps.js"></script>
+        <script src="/app/js/app.js?281115"></script>
+        <script src="/app/js/helper.js?281115"></script>
+        <script src="/app/js/fest-controllers.js?281115"></script>
+        <script src="/app/js/bands-controllers.js?281115"></script>
+        <script src="/app/js/services.js?281115"></script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<div class="ticket-steps" ng-controller="Repost">
+    <div class="ticket-steps__step {{'ticket-steps__step--' + Step.auth}}">
+        <h3 class="ticket-steps__header">1. Авторизоваться</h3>
+        <p>
+            Авторизуйте наше приложение.<br>
+            <!-- <small><i>Не беспокойтесь, мы не можем ничего постить без вашего&nbsp;согласия</i></small> -->
+        </p>
+        <div class="ticket-steps__button-container">
+            <button class="button ticket-steps__button" ng-class="{'ticket-steps__button--active':Step.auth==='available'}" ng-click="auth()">
+                Авторизоваться
+            </button>
+        </div>
+    </div>
+    <div class="ticket-steps__step {{'ticket-steps__step--' + Step.post}}">
+        <h3 class="ticket-steps__header">2. Разместить пост у себя на стене</h3>
+        <div class="postpreview">
+            <div class="postpreview__avatar">
+                <img src="{{post_credentials.avatar}}" alt="Аватар {{post_credentials.name}}">
+            </div>
+            <div class="postpreview__content">
+                <div class="postpreview__text">
+                    <b>{{post_credentials.name}}</b>
+                    <textarea ng-model="post_text" class="postpreview__textarea"></textarea>
+                </div>
+                <div class="postpreview__image">
+                    <button class="postpreview__previmage" ng-click="prevPostimage()"></button>
+                    <img class="postpreview__img" src="{{post_image.url}}" alt="Промо рок-фестиваля Батарея">
+                    <button class="postpreview__nextimage" ng-click="nextPostimage()"></button>
+                </div>
+            </div>
+        </div>
+        <div class="ticket-steps__button-container">
+            <button class='button ticket-steps__button' ng-class="{'ticket-steps__button--active':Step.post==='available'}" ng-click="makePost()">
+                Разместить пост
+            </button>
+        </div>
+    </div>
+    <div class="ticket-steps__step {{'ticket-steps__step--' + Step.save}}">
+        <h3 class="ticket-steps__header">3. Сохранить билет</h3>
+        <p>Распечатайте его, или загрузите на мобильное устройство.</p>
+        <img class="ticket-steps__qrcode" src="{{qrcode}}" class="ticket-steps__qrcode" alt="Промо рок-фестиваля Батарея">
+        <div class="ticket-steps__button-container">
+            <button class='button ticket-steps__button' ng-class="{'ticket-steps__button--active':Step.save==='available'}" ng-click="saveTicket()">
+                Сохранить билет
+            </button>
+        </div>
+    </div>
+</div>
