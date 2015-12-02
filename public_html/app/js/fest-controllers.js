@@ -641,10 +641,12 @@ var Lineup = [
         url:'http://studband.ru/artist/sasha+pryot'
     }, 
     {
-        name:'Jordans'
+        name:'Jordans',
+        url:'http://studband.ru/artist/jordans'
     },
     {
-        name:'Штормовое Предупреждение'
+        name:'Штормовое Предупреждение',
+        url:'http://studband.ru/artist/shtormovoe_preduprezhdenie'
     },
     {
         name:'MORE/',
@@ -657,7 +659,8 @@ var Lineup = [
         url:'http://studband.ru/artist/sell+the+ray'
     },
     {
-        name:'GO!inside'
+        name:'Go!nside',
+        url:'http://studband.ru/artist/go!nside'
     },
     {
         name:'Trial'
