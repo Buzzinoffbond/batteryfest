@@ -38,7 +38,7 @@ helper.controller('Header',
 helper.factory('Menu', function () {
     var Menu = [
         {name:'festival',text:'Фестиваль',url:'/',active:false,parent:'',hidden:false},
-        //{name:'bands',text:'Группы',url:'/band',active:false,parent:'',hidden:false},
+        //{name:'bands',text:'Группы',url:'http://studband.dev',active:false,parent:'',hidden:false},
         {name:'festindex',text:'Главная',url:'/',active:false,parent:'festival',hidden:true},
         {name:'lineup',text:'Lineup',url:'/lineup',active:false,parent:'festival',hidden:true},
         {name:'tickets',text:'Билеты на фестиваль',url:'/tickets',active:false,parent:'festival',hidden:true},
@@ -46,7 +46,7 @@ helper.factory('Menu', function () {
         // {name:'festabout',text:'О фестивале',url:'/about',active:false,parent:'festival',hidden:true},
         {name:'contact',text:'Контакты',url:'/contact',active:false,parent:'festival',hidden:true}
     ];
-    var ActiveItem = {};
+    var ActiveItem = {};    
     return{
         setActive: function(name){
             angular.forEach(Menu, function(item, key) {
@@ -74,4 +74,5 @@ helper.factory('Menu', function () {
 helper.controller('Menu',
     function($scope,Menu){
         $scope.Menu = Menu.getMenu();
+        $scope.vk_like = true;
     });

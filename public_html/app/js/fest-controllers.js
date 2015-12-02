@@ -65,9 +65,9 @@ festControllers.controller('Repost',
             }
         }
         function countdown(){
-            var fest = new Date("December 04 2015");
+            var fest = new Date("December 4 2015");
             var now = Date.now();
-            var count = Math.floor( (fest - now) / (1000*60*60*24) );
+            var count = Math.floor( (fest - now) / (1000*60*60*24) ) + 1;
             var last = count%10;
             if (last===1 && count!==11) {var days = ' день'; var remaining = 'остался '}
             else if ((last>=2 && last<=4) && !(count>=11 && count<=14)) {var days = ' дня'; var remaining = 'осталось '}
@@ -86,16 +86,18 @@ festControllers.controller('Repost',
         }
         $scope.post_credentials = post_placeholder[rand_int(post_placeholder.length-1)];
         var post_image = [
-            {id:'photo-88897995_388076224',url:'https://pp.vk.me/c629527/v629527551/2a0a8/gL-AjKBbASI.jpg'},
-            {id:'photo-88897995_388076231',url:'https://pp.vk.me/c629527/v629527551/2a0b1/Z-9bZLtPXMY.jpg'},
-            {id:'photo-88897995_388076233',url:'https://pp.vk.me/c629527/v629527551/2a0ba/vol89nF5NAs.jpg'},
-            {id:'photo-88897995_388076236',url:'https://pp.vk.me/c629527/v629527551/2a0c3/KoEfdXdtqPI.jpg'},
-            {id:'photo-88897995_388076237',url:'https://pp.vk.me/c629527/v629527551/2a0cc/6WTE9jetYvs.jpg'},
-            {id:'photo-88897995_388076240',url:'https://pp.vk.me/c629527/v629527551/2a0d5/1FrweI5ivB4.jpg'},
-            {id:'photo-88897995_388076243',url:'https://pp.vk.me/c629527/v629527551/2a0de/05mTWcRcxow.jpg'},
-            {id:'photo-88897995_388076245',url:'https://pp.vk.me/c629527/v629527551/2a0e7/VhFMVgMJtE0.jpg'},
-            {id:'photo-88897995_388076247',url:'https://pp.vk.me/c629527/v629527551/2a0f0/yxmxlcLhdpw.jpg'},
-            {id:'photo-88897995_388076252',url:'https://pp.vk.me/c629527/v629527551/2a0f9/J9TE8BfGdvg.jpg'},
+            {id:"photo-88897995_390905938",url:"https://pp.vk.me/c633131/v633131551/2753/bIK9s3ZccI8.jpg"},
+            {id:"photo-88897995_390905942",url:"https://pp.vk.me/c633131/v633131551/275c/P_is5r4mBIs.jpg"},
+            {id:"photo-88897995_390905945",url:"https://pp.vk.me/c633131/v633131551/2765/oI0E4K_vlac.jpg"},
+            {id:"photo-88897995_390905950",url:"https://pp.vk.me/c633131/v633131551/276e/njNAxBJO71E.jpg"},
+            {id:"photo-88897995_390905955",url:"https://pp.vk.me/c633131/v633131551/2777/Me0RqJyt54M.jpg"},
+            {id:"photo-88897995_390905960",url:"https://pp.vk.me/c633131/v633131551/2780/uh7VT_iPvyk.jpg"},
+            {id:"photo-88897995_390905969",url:"https://pp.vk.me/c633131/v633131551/2789/04hRo4sHdxc.jpg"},
+            {id:"photo-88897995_390905977",url:"https://pp.vk.me/c633131/v633131551/2792/5C4fjqKBCcY.jpg"},
+            {id:"photo-88897995_390905986",url:"https://pp.vk.me/c633131/v633131551/279b/zdjZgjc6zRc.jpg"},
+            {id:"photo-88897995_390905998",url:"https://pp.vk.me/c633131/v633131551/27a4/l7qd2IFlanI.jpg"},
+            {id:"photo-88897995_390906010",url:"https://pp.vk.me/c633131/v633131551/27ad/-q9r45C3zHc.jpg"},
+            {id:"photo-88897995_390906017",url:"https://pp.vk.me/c633131/v633131551/27b6/QURbbhAhX7Y.jpg"}
         ];
         var current_image = rand_int(post_image.length-1);
         $scope.post_image = post_image[current_image];
@@ -146,6 +148,10 @@ festControllers.controller('About',
     function($scope,Head,Menu){
         Head.setTitle('О фестивале');
         Menu.setActive('festabout');
+    });
+festControllers.controller('Agreement',
+    function($scope,Head,Menu){
+        Head.setTitle('Соглашение на обработку персональных данных');
     });
 festControllers.controller('Contact',
     function($scope,Head,Menu,ymapsConfig){
@@ -631,7 +637,8 @@ festControllers.controller('Media',
     });
 var Lineup = [
     {
-        name:'Саша Прёт'
+        name:'Саша Прёт',
+        url:'http://studband.ru/artist/sasha+pryot'
     }, 
     {
         name:'Jordans'
@@ -641,11 +648,13 @@ var Lineup = [
     },
     {
         name:'MORE/',
-        university:'ВИТИГ'
+        university:'ВИТИГ',
+        url:'http://studband.ru/artist/more'
     },
     {
         name:'Sell The Ray',
-        university:'МФТИ'
+        university:'МФТИ',
+        url:'http://studband.ru/artist/sell+the+ray'
     },
     {
         name:'GO!inside'
@@ -657,7 +666,8 @@ var Lineup = [
         name:'Dark Corner'
     },
     {
-        name:'Small Spark Destroys a Forest'
+        name:'Small Spark Destroys a Forest',
+        url:'http://studband.ru/artist/small+spark+destroys+a+forest'
     },
 ];
 festControllers.controller('Lineup',

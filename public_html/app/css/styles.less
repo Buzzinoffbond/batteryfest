@@ -794,22 +794,42 @@ a.participate-member__remove:active{
 .band__container{
 }
 .bandheader{
-    background: url(../img/dummy/band.png) center bottom no-repeat;
+    background-position: center;
+    background-repeat:  no-repeat;
     background-size: cover;
     padding-top: calc(~"50px + 2em");
-    padding-bottom: 10em;
+    height:400px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    display: none;
+}
+.bandheader:after{
+    content: "";
+    background: #EEE;
+    width: 100vw;
+    position: absolute;
+    bottom: -5vw;
+    height: 10vw;
+    -webkit-transform: rotate(-4.5deg);
+    -moz-transform: rotate(-4.5deg);
+    transform: rotate(-4.5deg);
 }
 .bandheader__container{
     .clearfix;
 }
-.bandheader__achievements{
+.band__notes{
     display: none;
 }
-@sizeBandcard : 682px;
 .bandcard{
-    max-width: @sizeBandcard;
+    max-width: 100%;
     padding: 1em;
     background: #FFF;
+    position: relative;
+    z-index: 100;
+    margin-top: 3.5em;
 }
 .bandname{
     font-size: 3em;
@@ -827,25 +847,27 @@ a.participate-member__remove:active{
     flex-grow:1;
     height: 216px;
     height: calc(~"200px + 1em");
-    background: url(../img/dummy/bandphoto1.jpg) center no-repeat;
     background-size: cover;
-}
-.bandphotos_secondary{
-    padding-left: 1em;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    background-color: #EEE;
 }
 .bandphotos_secondary1,
 .bandphotos_secondary2{
-    width: 100px;
+    width: 150px;
+    height: 150px;
     margin-bottom: 1em;
-    height: 100px;
     background-size: cover;
     background-position: center;
+    display: none;
 }
 .bandphotos_secondary1{
-    background-image: url(../img/dummy/bandphoto1.jpg);
+    background-color: #EEE;
 }
 .bandphotos_secondary2{
-    background-image: url(../img/dummy/bandphoto2.jpg);
+    background-color: #EEE;
 }
 .band__members{
     margin-top: 1em;
@@ -884,44 +906,75 @@ a.participate-member__remove:active{
     padding: 5px 9px;
     font-size: 14px;
 }
-@media only screen and (min-width: 1024px) {
+@sizeBandcard : 682px;
+@media only screen and (min-width: 640px) {
+    
+    .bandphotos_secondary1,
+    .bandphotos_secondary2{
+        display: block;
+    }
+    .bandphotos_secondary{
+        padding-left: 1em;
+    }
     .bandphotos_main{
         height: 316px;
         height: calc(~"300px + 1em");
     }
+    .bandcard{
+        max-width: @sizeBandcard;
+        margin: 0 auto;
+        margin-top: 3.5em;
+    }
+    .bandheader{
+        display: block;
+    }
+}
+@media only screen and (min-width: 1024px) {
+
     .band__container{
         display: flex;
+        padding: 0 1em;
     }
     .bandcard{
-        margin-top: -15em;
         box-shadow: 0 0 10px #222;
     }
     .bandphotos_secondary1,
     .bandphotos_secondary2{
         width: 150px;
         height: 150px;
-    }
-    .band__achievements{
-        float: right;
-        max-width: @sizeContainer - @sizeBandcard;
-        width: 100%;
-        color: #FFF;
-        padding-left: 1em;
-        display: flex;
+        display: block;
     }
     .band__notes{
+        margin-left: @sizeBandcard;
+        color: #FFF;
+        padding-left: 1em;
+        height: 12em;
+        display: flex;
+    }
+    .band__notes-inner{
+        display: table
+    }
+    .band__temp1{
         padding: 0;
         margin: 0 1em;
         font-family: @fontCaption;
-        font-size: 1.1em;
+        font-size: 1.1em;    
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
     }
-    .band__note{
+    .band__temp2{
         list-style: none;
     }
     .bandviews{
         font-family: @fontCaption;
         text-align: center;
         margin: 0 1em;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        flex-grow: 1;
+        display: none;
     }
     .bandviews__text{
         font-size: 1.1em;
@@ -931,9 +984,11 @@ a.participate-member__remove:active{
         font-size: 2em;
     }
     .bandstream{
+        padding-top: 20em;
         .clearfix;
         padding-left: 1em;
         flex-grow:1;
+        z-index: 10;
     }
     .streamcard{
         background: #fff;
@@ -1043,6 +1098,16 @@ a.pswp__share--vk:hover{
 .lineup__univer{
     opacity: 0.5;
 }
+a.lineup__link{
+    color: #FFF;
+    border:none;
+}
+// .lineup__groups:hover a.lineup__link{
+//     opacity: 0.4;
+// }
+// .lineup__groups:hover a.lineup__link:hover{
+//     opacity: 1;
+// }
 @media only screen and (min-width: 500px) {
     .lineup__group{
         margin: 0 0 0.1em;

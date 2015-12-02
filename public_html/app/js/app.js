@@ -1,20 +1,20 @@
 'use strict';
 
 VK.init({
-    apiId: 4850071 //4845552
+    apiId: 4845552 //4845552 4850071
 });
 VK.Widgets.Like("vk_like", {type: "full", height: 20, width:280, pageUrl:"http://batteryfest.ru/", pageImage:"/app/img/batteryfest-social.jpg"});
 
 var fest = angular.module('fest', [
     'ngRoute',
     'ngAnimate',
+    'filters',
     'helper',
-    'festControllers',
-    'festServices',
-    'bandsControllers',
     'masonry',
     'magnificPopup',
-    'ymaps'
+    'ymaps',
+    'festServices',
+    'festControllers'
 ]);
 
 fest.config(['$routeProvider', '$locationProvider',
@@ -29,6 +29,10 @@ fest.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'app/templates/about/about.html', 
                 controller: 'About'
             }).
+            when('/personal_agreement', {
+                templateUrl: 'app/templates/pages/personal_agreement.html', 
+                controller: 'Agreement'
+            }).
             when('/contact', {
                 templateUrl: 'app/templates/contact/contact.html', 
                 controller: 'Contact'
@@ -37,7 +41,7 @@ fest.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'app/templates/participate/form.html', 
                 controller: 'Participate'
             }).
-            when('/band',{
+            when('/band/:bandId',{
                 templateUrl: 'app/templates/band/band.html',
                 controller: 'Band'
             }).
@@ -52,8 +56,8 @@ fest.config(['$routeProvider', '$locationProvider',
             when('/', {
                 templateUrl: 'app/templates/index/index.html', 
                 controller: 'Index'
+            }).
+            otherwise({
+                redirectTo: '/'
             });
-            // otherwise({
-            //     redirectTo: '/'
-            // });
     }]);

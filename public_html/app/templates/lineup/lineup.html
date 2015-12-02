@@ -1,7 +1,11 @@
 <section class="lineup">
     <div class="container container--default">
         <ul class="lineup__groups">
-            <li ng-repeat="Group in Groups" class="lineup__group">{{Group.name}} <span class="lineup__univer">{{Group.university}}</span></li>
+            <li ng-repeat="Group in Groups" class="lineup__group">
+                <a ng-href="{{Group.url}}" ng-if="Group.url.length > 0" class="lineup__link">{{Group.name}} <span class="lineup__univer">{{Group.university}}</span></a>
+                <span ng-if="Group.url.length == undefined || Group.url.length == 0">{{Group.name}} <span class="lineup__univer">{{Group.university}}</span></span>
+                
+            </li>
         </ul>
         <div class="hello__bgoverlay"></div>
         <video autoplay loop poster="/app/img/bg_main.jpg" class="hello__bgvideo">

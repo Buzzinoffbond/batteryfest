@@ -1,57 +1,46 @@
 <section class="band">
-    <div class="bandheader">
+    <div class="bandheader" style="background-image:url(/app/img/dummy/band.jpg)">
         <div class="container container--default bandheader__container">
-            <div class="band__achievements">
-                <ul class="band__notes">
-                    <li class="band__note">Победители батареи 2014</li>
+            <div class="band__notes">
+                <ul class="band__temp1">
+                    <li class="band__temp2" ng-repeat="Achiv in Band.achivements">{{Achiv.text}}</li>
                 </ul>
                 <div class="bandviews">
-                <span class="bandviews__text">Просмотров</span><span class="bandviews__counter">1634</span>
+                    <span class="bandviews__text">Просмотров</span><span class="bandviews__counter">Band.views</span>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container container--default band__container">
+    <div class="container band__container">
         <div class="bandcard band__info">
             <div class="bandphotos">
-                <div class="bandphotos_main"></div>
+                <div class="bandphotos_main" style="background-image:url({{Band.photos[0].url}})"></div>
                 <div class="bandphotos_secondary">
-                    <div class="bandphotos_secondary1"></div>
-                    <div class="bandphotos_secondary2"></div>
+                    <div class="bandphotos_secondary1" style="background-image:url({{Band.photos[1].url}})"></div>
+                    <div class="bandphotos_secondary2" style="background-image:url({{Band.photos[2].url}})"></div>
                 </div>
             </div>
-            <h1 class="bandname">Coffee</h1>
-            <h2 class="banduniversity">МФТИ</h2>
-            <p><span class="tag">indie</span><span class="tag">pop rock</span></p>
-<p>Coffee - это совсем молодая группа. Их музыка - в основном инди/поп-рок, но парни не ограничивают себя жанрами, для них главное - сделать хорошую песню. </p>
-
-<p>Группа рождается в 2011 году как проект двух студентов московского ФизТеха - Макс поет и играет на гитарах, Михалыч играет на клавишных. Ребята вместе придумывают и аранжируют песни. Они выделяются сильными текстами и цепляющей музыкой, в которой угадывается сильное влияние современных западных инди-групп. Первое серьезное достижение приходит к группе Coffee через год, когда на их записи обращает внимание жюри фестиваля "Мой Первый Диск". Выступив на этом фестивале, парни выигрывают свою первую запись в студии. Так появляется их первый мини-альбом "Над землей" с тремя песнями. Также ребята самостоятельно занимаются звукосведением и постоянно выкладывают в сеть домашние записи новых песен, которые с каждым разом звучат все профессиональнее. </p>
-
-<p>В 2013 году в группу пришел барабанщик Данила, и сейчас группа Coffee - это три человека. До 2014 года парни давали концерты, перекладывая насыщенные аранжировки всего на три инструмента - барабаны, клавиши и бас. Сейчас группа Coffee репетирует с сессионным бас-гитаристом и готовит материал для записи своего первого полноценного студийного альбома.</p>
+            <h1 class="bandname">{{Band.name}}</h1>
+            <h2 class="banduniversity">{{Band.university}}</h2>
+            <p><span class="tag" ng-repeat="genre in Band.genres">{{genre}}</span></p>
+            <div ng-bind-html="bandDescription" class="band__description"></div>
             <h2 class="caption">Состав</h2>
             <div class="band__members"> 
-                <div class="bandmember">
-                    <div class="bandmember__photo" style="background-image:url(/app/img/dummy/bandmember1.jpg)"></div>
-                    <b class="bandmember__name">Максим Кузнецов</b>
-                    <span class="bandmember__instrument">Вокал, гитары, харизма</span>
+                <div class="bandmember" ng-repeat="member in Band.members">
+                    <div class="bandmember__photo" style="background-image:url({{member.photo}})"></div>
+                    <b class="bandmember__name">{{member.name}}</b>
+                    <span class="bandmember__instrument">{{member.role}}</span>
                 </div>
-                <div class="bandmember">
-                    <div class="bandmember__photo" style="background-image:url(/app/img/dummy/bandmember2.jpg)"></div>
-                    <b class="bandmember__name">Михаил Ерохин</b>
-                    <span class="bandmember__instrument">Клавиши, офигенность</span>
-                </div>
-                <div class="bandmember">
+<!--                 <div class="bandmember">
                     <div class="bandmember__photo" style="background-image:url(/app/img/dummy/nomember.jpg)"></div>
-                    <b class="bandmember__name">Нужен ударник</b>
+                    <b class="bandmember__name"></b>
                     <span class="bandmember__instrument"></span>
-                </div>
+                </div> -->
             </div>
             <h2 class="caption">Контакты</h2>
-            <a href="https://vk.com/coffee_band">vk.com/coffee_band</a>
+            <div ng-bind-html="bandContacts"></div>
         </div>
         <div class="bandstream">
-            <div class="streamcard">1</div>
-            <div class="streamcard">2</div>
         </div>
     </div>
 </section>
